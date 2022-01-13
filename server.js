@@ -7,6 +7,9 @@ const express = require('express');
 // This routes to a JSON containing all of the zoos animals
 const { animals } = require('./data/animals');
 
+// see node.js - notes, heroku
+const PORT = process.env.PORT || 3001;
+
 // instantiates a server
 const app = express();
 
@@ -78,6 +81,6 @@ app.get('/api/animals', (req, res) => {
 // to stop server press Ctrl + C, and then Y at the prompt if
 // prompted.
 // for more infoi see google docs node.js - notes, express.js section.
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
